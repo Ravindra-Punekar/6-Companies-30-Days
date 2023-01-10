@@ -4,4 +4,4 @@
 
 Microsoft - https://leetcode.com/list/onk51nbr
  
-Goldman Sachs - https://leetcode.com/list/?selectedList=ovkpxw3d
+Goldman Sachs - https://leetcode.com/list/ovkpxw3d
