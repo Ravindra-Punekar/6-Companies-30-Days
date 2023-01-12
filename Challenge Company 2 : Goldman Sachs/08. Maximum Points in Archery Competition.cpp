@@ -16,19 +16,17 @@ public:
             }
             return;
         }
-        
-        temp.push_back(0);
-        backtrack(numArrows, section+1, score, alice, temp);    //bob lose here
-        temp.pop_back();
+
+        backtrack(numArrows, section+1, score, alice, temp);    //bob lose here(Don't Shoot)
 
         if(alice[section]+1 <= numArrows){
-            temp.push_back(alice[section]+1);
-            backtrack(numArrows-(alice[section]+1), section+1, score+section, alice, temp); //bob wins here
-            temp.pop_back();
+            temp[section] = alice[section]+1;   //bob wins here by shooting 1 more arrow than alice
+            backtrack(numArrows-(alice[section]+1), section+1, score+section, alice, temp); 
+            temp[section] = 0;  //backtrack
         }
     }
     vector<int> maximumBobPoints(int numArrows, vector<int>& aliceArrows) {
-        vector<int> temp;
+        vector<int> temp(12,0);
         int score=0;
         backtrack(numArrows,0,score, aliceArrows, temp);
         return BobArrows;
